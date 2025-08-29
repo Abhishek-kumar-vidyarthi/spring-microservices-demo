@@ -2,7 +2,7 @@ package com.example.order_service.controller;
 
 import com.example.order_service.model.Order;
 import com.example.order_service.repository.OrderRepository;
-import com.example.order_service.service.OrderService;
+//import com.example.order_service.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,21 +15,21 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/orders")
 public class OrderController {
-    @Autowired
-    OrderService orderService;
+//    @Autowired
+    //OrderService orderService;
 
     @Autowired
     OrderRepository orderRepository;
 
-    @PostMapping("/create")
-    public ResponseEntity<Order> createOrder(@RequestBody Order order) {
-        try{
-            Order createdOrder = orderService.createOrder(order);
-            return new ResponseEntity<>(createdOrder, HttpStatus.CREATED);
-        }catch (Exception e){
-            return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
-        }
-    }
+//   @PostMapping("/create")
+//    public ResponseEntity<Order> createOrder(@RequestBody Order order) {
+//        try{
+//            Order createdOrder = orderService.createOrder(order);
+//            return new ResponseEntity<>(createdOrder, HttpStatus.CREATED);
+//        }catch (Exception e){
+//            return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
+//        }
+//    }
 
     @GetMapping("/{id}")
     public ResponseEntity<Order> getOrderById(@PathVariable Long id){
@@ -62,15 +62,15 @@ public class OrderController {
         }
     }
 
-    @PutMapping("/update/{id}")
-    public ResponseEntity<Order> updateOrder(@PathVariable Long id, @RequestBody Order order){
-        try{
-            Order updatedOrder = orderService.updateOrder(id, order);
-            return new ResponseEntity<>(updatedOrder, HttpStatus.OK);
-        }catch (Exception e){
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-    }
+//    @PutMapping("/update/{id}")
+//    public ResponseEntity<Order> updateOrder(@PathVariable Long id, @RequestBody Order order){
+//        try{
+//            Order updatedOrder = orderService.updateOrder(id, order);
+//            return new ResponseEntity<>(updatedOrder, HttpStatus.OK);
+//        }catch (Exception e){
+//            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+//        }
+//    }
 
 
 
